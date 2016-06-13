@@ -200,13 +200,15 @@ module.exports = function(config){
 
 # Connecting the API to Angular
   * In your Rails project, add the following to the gemfile then run bundle: `gem 'rack-cors', :require => 'rack/cors'`
-  * Open the `application.rb` file within the `config` folder, then add insert the following code within the `Application` class (when being pushed to production, the `origins` URL will need to be updated):
+  * Open the `application.rb` file within the `config` folder, then add the following code within the `Application` class (when being pushed to production, the `origins` URL will need to be updated):
+  
   ```
   config.middleware.insert_before 0, "Rack::Cors" do
     allow do
       origins 'http://localhost:8080'
       resource '*', headers: :any, methods: [:get, :post, :delete]
   ```
+  
   * Within your Angular frontend, begin any calls to API URLs with `http://localhost:8080`
   * After setting up your backend and frontend, follow the below steps to check they are connected:
   * Run your Rails server with `rails s` within your Rails directory

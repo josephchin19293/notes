@@ -207,6 +207,8 @@ module.exports = function(config){
     allow do
       origins 'http://localhost:8080'
       resource '*', headers: :any, methods: [:get, :post, :delete]
+    end
+  end
   ```
   
   * Within your Angular frontend, begin any calls to API URLs with `http://localhost:8080`

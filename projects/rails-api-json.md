@@ -41,6 +41,7 @@ Create a directory for the Rails backend, then follow the below steps:
 
 ### Controller
   * Controllers can be built in much the same way as controllers in a standard Rails app, with the addition of the line `render json: @*variable*` to output the objects assigned to a variable as JSON. This will then be accessible from the specified route. An example for outputting all posts as JSON:
+ 
   ```
   def index
     render json: Post.all
